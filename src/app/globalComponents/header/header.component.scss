@@ -5,23 +5,58 @@
     z-index: 100;
     padding: $mediumPadding;
     top: 0;
-    left: 0;
-    width: 100vw;
-    height: 45px;
-    background-color: $skyBlue;
+    width: 60vw;
+    height: 90px;
+    background-color: black;
+    color: white;
     @include flexCenter();
     justify-content: space-between;
-    &_logo{
-        font-size: 24px;
-        background: -webkit-linear-gradient($teal, $green);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
+    font-size: 14px;
+    letter-spacing: 1px;
+    display: flex;
+    justify-content: space-between;
     &_hamburger{
         font-size: 24px;
         @include breakpoint(1024px){
             display: none;
         }
+    }
+    &_title{
+        width: 212px;
+        height: 100%;
+        position: relative;
+        &_top{
+            position: absolute;
+            top: 0;
+            left: -3px;
+            font-size: 48px;
+            letter-spacing: 4px;
+        }
+        &_bottom{
+            position: absolute;
+            bottom: 0;
+            font-size: 12px;
+        }
+        &_right{
+            position: absolute;
+            right: 0;
+            top: -4px;
+            font-size: 69px;
+            font-weight: bold;
+            background: -webkit-linear-gradient(40deg, $teal 30%, $green);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    }
+    &_contact{
+        font-size: 16px;
+    }
+    &_items{
+        height: 100%;
+        padding-top: 32px;
+        background: /* gradient can be an image */
+        linear-gradient(to left, black 0%, $green 20%, $teal 68%, black 100%) left bottom black no-repeat;
+        background-size:100% 5px ;
     }
 }
 
@@ -30,5 +65,16 @@ ul{
     list-style: none;
     @include breakpoint(1024px){
         display: flex;
+    }
+}
+
+li{
+    margin: 0 16px;
+    cursor: pointer;
+    &:first-of-type{
+        margin-left: 0;
+    }
+    &:last-of-type{
+        margin-right: 0;
     }
 }
